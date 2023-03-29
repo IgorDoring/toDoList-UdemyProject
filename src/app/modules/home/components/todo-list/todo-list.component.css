@@ -18,12 +18,12 @@ main div.container {
 .checkTask, .deleteTask{  }
 
 div.container .taskRow:not(.taskRow:last-child){
-	margin-bottom: 14px;
+	margin-bottom: 10px;
 }
 
 hr{
 	color: #10403B;
-	margin-bottom: 14px;
+	margin-bottom: 10px;
 }
 
 .taskCompleted p{

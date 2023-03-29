@@ -1,26 +1,20 @@
 <main>
 	<div class="container">
-		<div class="taskRow">
+		<ng-template ngFor let-item [ngForOf]="todoList" let-i="index">
+			<div class="taskRow" *ngIf="!item.checked">
 				<span class="material-icons checkTask">check_box_outline_blank</span>
-				<p>Chorar</p>
+				<p>{{item.task}}</p>
 				<span class="material-icons deleteTask">delete</span>
-		</div>
-		<div class="taskRow">
-				<span class="material-icons checkTask">check_box_outline_blank</span>
-				<p>Chorar no Banho</p>
-				<span class="material-icons deleteTask">delete</span>
-		</div>
-		<div class="taskRow">
-				<span class="material-icons checkTask">check_box_outline_blank</span>
-				<p>Chorar no Banho de novo</p>
-				<span class="material-icons deleteTask">delete</span>
-		</div>
-		<hr>
-		<div class="taskRow taskCompleted">
+			</div>
+		</ng-template>
+		<ng-template ngFor let-item [ngForOf]="todoList" let-i="index" let-first="first">
+			<hr *ngIf="first">
+			<div class="taskRow" [ngClass]="{'taskCompleted': item.checked}" *ngIf="item.checked">
 				<span class="material-icons checkTask">check_box</span>
-				<p>Chorar no Banho de novo</p>
+				<p>{{item.task}}</p>
 				<span class="material-icons deleteTask">delete</span>
-		</div>
+			</div>
+		</ng-template>
 	</div>
 	<app-todo-input-add-itens></app-todo-input-add-itens>
 	<app-todo-button-delete-all></app-todo-button-delete-all>
