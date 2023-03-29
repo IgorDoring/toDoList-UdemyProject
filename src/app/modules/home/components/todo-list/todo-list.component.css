@@ -1,4 +1,31 @@
 main div.container {
-	color: #8AA6A3;
-	background-color: #127369;
+	color: #10403B;
+	background-color: #8AA6A3;
+	padding: 10px;
+}
+
+.taskRow{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.taskRow p{
+	text-align: center;
+	line-height: 24px;
+}
+
+.checkTask, .deleteTask{  }
+
+div.container .taskRow:not(.taskRow:last-child){
+	margin-bottom: 14px;
+}
+
+hr{
+	color: #10403B;
+	margin-bottom: 14px;
+}
+
+.taskCompleted p{
+	text-decoration: line-through;
 }

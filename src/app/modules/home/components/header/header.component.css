@@ -2,7 +2,7 @@ header{
 	padding: 7px 17px;
 	background-color: #127369;
 	margin-top: 15px;
-	border-radius: 5px;
+	border-radius: 5px 5px 0 0;
 }
 
 h2{
