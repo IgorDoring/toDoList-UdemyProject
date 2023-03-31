@@ -16,6 +16,6 @@
 			</div>
 		</ng-template>
 	</div>
-	<app-todo-input-add-itens></app-todo-input-add-itens>
-	<app-todo-button-delete-all></app-todo-button-delete-all>
+	<app-todo-input-add-itens (emitTaskToAdd)="addTask($event)"></app-todo-input-add-itens>
+	<app-todo-button-delete-all *ngIf="todoList.length" (click)="deleteAllTasks()"></app-todo-button-delete-all>
 </main>

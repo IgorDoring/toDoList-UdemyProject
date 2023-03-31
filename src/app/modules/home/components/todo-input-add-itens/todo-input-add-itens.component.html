@@ -1,5 +1,6 @@
 <section class="container">
 	<div class="inputBox">
-		<input type="text" placeholder="Type your todo here...">
+		<input [(ngModel)]="taskToAdd" placeholder="Type your todo here..." 
+		(keyup.enter)="submitItemTaskList()">
 	</div>
 </section>

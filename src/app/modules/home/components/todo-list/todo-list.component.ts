@@ -7,22 +7,12 @@ import { Component } from '@angular/core';
 })
 
 export class TodoListComponent {
-  public todoList: Array<TaskList> = [];
-
-  mock(){
-    this.todoList.push({task: "task ", checked: false});
-    this.todoList.push({task: "task a", checked: false});
-    this.todoList.push({task: "task b", checked: false});
-    this.todoList.push({task: "task c", checked: false});
-    this.todoList.push({task: "task d", checked: true});
-    this.todoList.push({task: "task e", checked: true});
-    console.log(this.todoList.length);
-  }
+  public todoList: Array<TaskList> = JSON.parse(localStorage.getItem("list") || '[]');;
 
   constructor() { }
 
-  ngOnInit(): void{
-    this.mock();
+  ngDoCheck(): void{
+    this.setLocalStorage()
   }
 
   checkTask(i: number, check: boolean): void{
@@ -32,7 +22,24 @@ export class TodoListComponent {
   deleteTask(i: number): void{
     let confirmation = confirm("Tem certeza sobre deletar?");
     if(confirmation)
-      this.todoList.splice(i, i+1);
+      this.todoList.splice(i, 1);
+  }
+
+  addTask(task: string) {
+    return this.todoList.push({ task: task, checked: false });
+  }
+
+  deleteAllTasks(): void{
+    let confirmation = confirm("Tem certeza sobre deletar todas as tarefas?");
+    if(confirmation)
+      this.todoList = [];
+  }
+
+  public setLocalStorage() {
+    if (this.todoList) {
+      this.todoList.sort((first, last) => Number(first.checked) - Number(last.checked));
+      localStorage.setItem('list', JSON.stringify(this.todoList));
+    }
   }
 }
 
