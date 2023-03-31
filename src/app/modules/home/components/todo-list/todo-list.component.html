@@ -2,17 +2,17 @@
 	<div class="container">
 		<ng-template ngFor let-item [ngForOf]="todoList" let-i="index">
 			<div class="taskRow" *ngIf="!item.checked">
-				<span class="material-icons checkTask">check_box_outline_blank</span>
+				<span class="material-icons" (click)="checkTask(i, item.checked)">check_box_outline_blank</span>
 				<p>{{item.task}}</p>
-				<span class="material-icons deleteTask">delete</span>
+				<span class="material-icons" (click)="deleteTask(i)">delete</span>
 			</div>
 		</ng-template>
 		<ng-template ngFor let-item [ngForOf]="todoList" let-i="index" let-first="first">
 			<hr *ngIf="first">
 			<div class="taskRow" [ngClass]="{'taskCompleted': item.checked}" *ngIf="item.checked">
-				<span class="material-icons checkTask">check_box</span>
+				<span class="material-icons" (click)="checkTask(i, item.checked)">check_box</span>
 				<p>{{item.task}}</p>
-				<span class="material-icons deleteTask">delete</span>
+				<span class="material-icons" (click)="deleteTask(i)">delete</span>
 			</div>
 		</ng-template>
 	</div>

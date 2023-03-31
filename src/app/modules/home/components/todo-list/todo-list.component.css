@@ -4,6 +4,10 @@ main div.container {
 	padding: 10px;
 }
 
+main div.container:empty{
+	padding: 80px 0;
+}
+
 .taskRow{
 	display: flex;
 	justify-content: space-between;
@@ -23,6 +27,8 @@ div.container .taskRow:not(.taskRow:last-child){
 
 hr{
 	color: #10403B;
+	width: 80%;
+	margin: 0 auto;
 	margin-bottom: 10px;
 }
 

@@ -24,6 +24,16 @@ export class TodoListComponent {
   ngOnInit(): void{
     this.mock();
   }
+
+  checkTask(i: number, check: boolean): void{
+    this.todoList[i].checked = !this.todoList[i].checked;
+  }
+
+  deleteTask(i: number): void{
+    let confirmation = confirm("Tem certeza sobre deletar?");
+    if(confirmation)
+      this.todoList.splice(i, i+1);
+  }
 }
 
 export interface TaskList {
