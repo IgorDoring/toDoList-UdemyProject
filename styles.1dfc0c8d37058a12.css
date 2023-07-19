@@ -1,0 +1,1 @@
+@import"https://fonts.googleapis.com/css2?family=Roboto&display=swap";*{margin:0;padding:0;box-sizing:border-box;font-family:Roboto}body{background-color:#10403b}.container{width:90%;margin:0 auto}@media only screen and (min-width: 768px){.container{width:60%;margin:0 auto}}@media only screen and (min-width: 1600px){.container{width:40%;margin:0 auto}}
